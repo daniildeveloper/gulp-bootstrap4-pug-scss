@@ -80,6 +80,9 @@ gulp.task('framework-prepare', function () {
     gulp.src(('node_modules/font-awesome/fonts/**/*'))
         .pipe(gulp.dest('./dist/fonts'));
 
+    gulp.src('./src/js/popper.min.js')
+        .pipe(gulp.dest('./dist/js'));
+
 });
 
 
