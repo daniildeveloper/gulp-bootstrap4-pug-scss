@@ -21,7 +21,6 @@ gulp.task('default', ['framework-prepare', 'pug', 'img', 'fonts', 'js'], functio
     gulp.watch('./src/less/**/*less', ['less']);
     gulp.watch('./src/pug/**/*.pug', ['pug']);
     gulp.watch('./src/img/**/*.{svg, jpg, png, gif, jpeg}', ['img']);
-    gulp.watch('./dist/**/*.html', ['html']);
     gulp.watch('./src/app.js', ['js']);
 });
 
@@ -37,6 +36,9 @@ gulp.task('pug', function () {
             return "Pug: " + err;
         }))
         .pipe(gulp.dest('./dist/'))
+        .pipe(reload({
+            stream: true
+        }))
 });
 
 /**
